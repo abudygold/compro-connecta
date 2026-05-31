@@ -9,7 +9,7 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material';
-import { HeaderPage } from '../layout/header-page';
+import { Header } from '../layout/header';
 import Circle from '@mui/icons-material/Circle';
 import { useState } from 'react';
 import { Section } from '../components/shared/section';
@@ -41,7 +41,7 @@ export default function PrivacyNote() {
 
   return (
     <>
-      <HeaderPage />
+      <Header />
 
       <Box className="flex flex-col gap-10 p-6 md:lg:p-10 md:lg:flex-row">
         {/* Sidebar */}
@@ -61,7 +61,7 @@ export default function PrivacyNote() {
             Content
           </Typography>
           <List dense>
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.map(item => (
               <ListItem key={item} className="px-0 py-1 text-[#6D7579]">
                 <ListItemIcon className="!min-w-auto mr-2">
                   <Circle className="!text-[6px]" />
@@ -91,11 +91,14 @@ export default function PrivacyNote() {
           >
             Privacy Notice
           </Typography>
-          <Typography className="py-6" sx={{ fontFamily: "'Inter', sans-serif" }}>
+          <Typography
+            className="py-6"
+            sx={{ fontFamily: "'Inter', sans-serif" }}
+          >
             This privacy policy is designed to deliver transparent,
             straightforward, and easily comprehensible information to all users
-            of our website, prospective clients, customers, and recipients of our
-            communication services.
+            of our website, prospective clients, customers, and recipients of
+            our communication services.
           </Typography>
 
           <Divider />
@@ -192,9 +195,9 @@ export default function PrivacyNote() {
             </p>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
               <li>
-                Service Providers: With trusted third-party vendors who assist in
-                delivering our services, such as hosting, analytics, and customer
-                support.
+                Service Providers: With trusted third-party vendors who assist
+                in delivering our services, such as hosting, analytics, and
+                customer support.
               </li>
               <li>
                 Legal Obligations: To comply with applicable laws, regulations,

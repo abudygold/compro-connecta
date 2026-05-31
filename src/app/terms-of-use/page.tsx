@@ -9,7 +9,7 @@ import {
   ListItemText,
   Typography,
 } from '@mui/material';
-import { HeaderPage } from '../layout/header-page';
+import { Header } from '../layout/header';
 import Circle from '@mui/icons-material/Circle';
 import { useState } from 'react';
 import { Section } from '../components/shared/section';
@@ -44,7 +44,7 @@ export default function TermsOfUse() {
 
   return (
     <>
-      <HeaderPage />
+      <Header />
 
       <Box className="flex flex-col gap-10 p-6 md:lg:p-10 md:lg:flex-row">
         {/* Sidebar */}
@@ -64,7 +64,7 @@ export default function TermsOfUse() {
             Content
           </Typography>
           <List dense>
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.map(item => (
               <ListItem key={item} className="px-0 py-1 text-[#6D7579]">
                 <ListItemIcon className="!min-w-auto mr-2">
                   <Circle className="!text-[6px]" />
@@ -94,7 +94,10 @@ export default function TermsOfUse() {
           >
             Terms Of Use
           </Typography>
-          <Typography className="py-6" sx={{ fontFamily: "'Inter', sans-serif" }}>
+          <Typography
+            className="py-6"
+            sx={{ fontFamily: "'Inter', sans-serif" }}
+          >
             Thank you for visiting our Site! We look forward to doing business
             with you. Here are some Do&apos;s and Don&apos;ts about our Site.
           </Typography>
@@ -134,8 +137,8 @@ export default function TermsOfUse() {
             </Typography>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
               <li>
-                Ensure that your use of the Services complies with all applicable
-                laws and regulations.
+                Ensure that your use of the Services complies with all
+                applicable laws and regulations.
               </li>
               <li>
                 Do not use the Services for illegal, fraudulent, or harmful
@@ -161,8 +164,8 @@ export default function TermsOfUse() {
             </p>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
               <li>
-                Violate the intellectual property rights of Connecta or any third
-                party.
+                Violate the intellectual property rights of Connecta or any
+                third party.
               </li>
               <li>
                 Interfere with or disrupt the integrity or performance of the
