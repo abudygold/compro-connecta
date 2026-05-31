@@ -1,4 +1,4 @@
-'use client'; // This directive must be at the very top
+'use client';
 
 import {
   Box,
@@ -12,23 +12,24 @@ import {
 import { HeaderPage } from '../layout/header-page';
 import Circle from '@mui/icons-material/Circle';
 import { useState } from 'react';
+import { Section } from '../components/shared/section';
+
+const NAV_ITEMS = [
+  'Introduction',
+  'Information We Collect',
+  'How We Use Your Information',
+  'Sharing Your Information',
+  'Data Security',
+  'Data Retention',
+  'Your Rights',
+  'Cookies and Tracking Technologies',
+  'International Data Transfers',
+  'Updates to this Privacy Notice',
+  'Contact Information',
+];
 
 export default function PrivacyNote() {
-  const [navSelected, setNavSelected] = useState('Introduction ');
-
-  const navItems = [
-    'Introduction ',
-    'Information We Collect',
-    'How We Use Your Information',
-    'Sharing Your Information',
-    'Data Security',
-    'Data Retention',
-    'Your Rights',
-    'Cookies and Tracking Technologies',
-    'International Data Transfers',
-    'Updates to this Privacy Notice',
-    'Contact Information',
-  ];
+  const [navSelected, setNavSelected] = useState(NAV_ITEMS[0]);
 
   const handleNavClick = (id: string) => {
     setNavSelected(id);
@@ -48,22 +49,20 @@ export default function PrivacyNote() {
           className="md:lg:w-64 p-4 rounded-3xl border border-[#DBE0E3]"
           sx={{
             position: { md: 'sticky', lg: 'sticky' },
-            top: { md: 32, lg: 32 }, // adjust as needed for your header height
+            top: { md: 32, lg: 32 },
             alignSelf: { md: 'flex-start', lg: 'flex-start' },
           }}
         >
           <Typography
             variant="h6"
             className="mb-4 !font-semibold"
-            sx={{
-              fontFamily: "'Inter', sans-serif",
-            }}
+            sx={{ fontFamily: "'Inter', sans-serif" }}
           >
             Content
           </Typography>
           <List dense>
-            {navItems.map((item, index) => (
-              <ListItem key={index} className="px-0 py-1 text-[#6D7579]">
+            {NAV_ITEMS.map((item) => (
+              <ListItem key={item} className="px-0 py-1 text-[#6D7579]">
                 <ListItemIcon className="!min-w-auto mr-2">
                   <Circle className="!text-[6px]" />
                 </ListItemIcon>
@@ -88,22 +87,15 @@ export default function PrivacyNote() {
           <Typography
             variant="h4"
             className="mb-2 !font-semibold"
-            sx={{
-              fontFamily: "'Inter', sans-serif",
-            }}
+            sx={{ fontFamily: "'Inter', sans-serif" }}
           >
             Privacy Notice
           </Typography>
-          <Typography
-            className="py-6"
-            sx={{
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
+          <Typography className="py-6" sx={{ fontFamily: "'Inter', sans-serif" }}>
             This privacy policy is designed to deliver transparent,
             straightforward, and easily comprehensible information to all users
-            of our website, prospective clients, customers, and recipients of
-            our communication services.
+            of our website, prospective clients, customers, and recipients of our
+            communication services.
           </Typography>
 
           <Divider />
@@ -111,14 +103,11 @@ export default function PrivacyNote() {
           <Typography
             variant="body2"
             className="py-6 mb-4 text-gray-600"
-            sx={{
-              fontFamily: "'Inter', sans-serif",
-            }}
+            sx={{ fontFamily: "'Inter', sans-serif" }}
           >
             Last Updated: <strong>16 January 2025</strong>
           </Typography>
 
-          {/* Sections */}
           <Section
             title="Introduction"
             content={`Connecta values your privacy and is committed to protecting your personal data. This Privacy Notice explains how we collect, use, and safeguard your information when you use our CPaaS services, including messaging, campaign management, chatbots with AI, flow builders, and contact center solutions across multiple communication channels (e.g., WhatsApp, Line, Telegram, Email, SMS, Instagram Direct Message, Facebook Messenger).`}
@@ -128,13 +117,11 @@ export default function PrivacyNote() {
             <Typography
               variant="h6"
               className="!mb-4 !font-semibold !text-2xl"
-              sx={{
-                fontFamily: "'Inter', sans-serif",
-              }}
+              sx={{ fontFamily: "'Inter', sans-serif" }}
             >
               Information We Collect
             </Typography>
-            <p className="text-base text-[#6D7579] inter">
+            <p className="text-base text-[#6D7579] inter mb-2">
               We may collect the following types of information:
             </p>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
@@ -162,13 +149,11 @@ export default function PrivacyNote() {
             <Typography
               variant="h6"
               className="!mb-4 !font-semibold !text-2xl"
-              sx={{
-                fontFamily: "'Inter', sans-serif",
-              }}
+              sx={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Information We Collect
+              How We Use Your Information
             </Typography>
-            <p className="text-base text-[#6D7579] inter">
+            <p className="text-base text-[#6D7579] inter mb-2">
               We use your information for the following purposes:
             </p>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
@@ -194,24 +179,22 @@ export default function PrivacyNote() {
             </ul>
           </Box>
 
-          <Box className="mt-6" id="Sharing Your Information ">
+          <Box className="mt-6" id="Sharing Your Information">
             <Typography
               variant="h6"
               className="!mb-4 !font-semibold !text-2xl"
-              sx={{
-                fontFamily: "'Inter', sans-serif",
-              }}
+              sx={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Sharing Your Information 
+              Sharing Your Information
             </Typography>
-            <p className="text-base text-[#6D7579] inter">
-              We may share your information under the following circumstances:​
+            <p className="text-base text-[#6D7579] inter mb-2">
+              We may share your information under the following circumstances:
             </p>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
               <li>
-                Service Providers: With trusted third-party vendors who assist
-                in delivering our services, such as hosting, analytics, and
-                customer support.
+                Service Providers: With trusted third-party vendors who assist in
+                delivering our services, such as hosting, analytics, and customer
+                support.
               </li>
               <li>
                 Legal Obligations: To comply with applicable laws, regulations,
@@ -239,13 +222,11 @@ export default function PrivacyNote() {
             <Typography
               variant="h6"
               className="!mb-4 !font-semibold !text-2xl"
-              sx={{
-                fontFamily: "'Inter', sans-serif",
-              }}
+              sx={{ fontFamily: "'Inter', sans-serif" }}
             >
               Your Rights
             </Typography>
-            <p className="text-base text-[#6D7579] inter">
+            <p className="text-base text-[#6D7579] inter mb-2">
               Depending on your jurisdiction, you may have the following rights:
             </p>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
@@ -263,7 +244,7 @@ export default function PrivacyNote() {
 
           <Section
             title="Cookies and Tracking Technologies"
-            content={`Our platform may use cookies and similar technologies to enhance user experience and gather usage statistics. You can manage your preferences through your browser settings.​`}
+            content={`Our platform may use cookies and similar technologies to enhance user experience and gather usage statistics. You can manage your preferences through your browser settings.`}
           />
 
           <Section
@@ -278,35 +259,10 @@ export default function PrivacyNote() {
 
           <Section
             title="Contact Information"
-            content={`If you have any questions about these Terms, please contact us at support@connecta.id.`}
+            content={`If you have any questions about this Privacy Notice, please contact us at support@connecta.id.`}
           />
         </Box>
       </Box>
     </>
-  );
-}
-
-// Section component
-function Section({ title, content }: { title: string; content: string }) {
-  return (
-    <Box className="mt-6" id={title}>
-      <Typography
-        variant="h6"
-        className="!mb-4 !font-semibold !text-2xl"
-        sx={{
-          fontFamily: "'Inter', sans-serif",
-        }}
-      >
-        {title}
-      </Typography>
-      <Typography
-        className="!text-base text-[#6D7579]"
-        sx={{
-          fontFamily: "'Inter', sans-serif",
-        }}
-      >
-        {content}
-      </Typography>
-    </Box>
   );
 }

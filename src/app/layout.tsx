@@ -19,9 +19,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'BSP Landing Page',
+  title: 'Omnichannel Platform | Connecta',
   description:
-    'Welcome to the BSP Landing Page, your gateway to the latest updates, resources, and information about the BSP platform.',
+    'Connecta empowers businesses with a cutting-edge CPaaS platform, enabling seamless communication across multiple channels including WhatsApp, Line, Telegram, Email, SMS, and more.',
 };
 
 export default function RootLayout({

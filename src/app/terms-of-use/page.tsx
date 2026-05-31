@@ -1,4 +1,4 @@
-'use client'; // This directive must be at the very top
+'use client';
 
 import {
   Box,
@@ -12,26 +12,27 @@ import {
 import { HeaderPage } from '../layout/header-page';
 import Circle from '@mui/icons-material/Circle';
 import { useState } from 'react';
+import { Section } from '../components/shared/section';
+
+const NAV_ITEMS = [
+  'Acceptance of Terms',
+  'Description of Services',
+  'Eligibility',
+  'User Responsibility',
+  'Prohibited Uses',
+  'Data Privacy',
+  'Service Availability',
+  'Fees and Payment',
+  'Intellectual Property',
+  'Limitation of Liability',
+  'Indemnification',
+  'Changes to Terms',
+  'Governing Law',
+  'Contact Information',
+];
 
 export default function TermsOfUse() {
-  const [navSelected, setNavSelected] = useState('Acceptance of Terms');
-
-  const navItems = [
-    'Acceptance of Terms',
-    'Description of Services',
-    'Eligibility',
-    'User Responsibility',
-    'Prohibited Uses You agree not to:',
-    'Data Privacy',
-    'Service Availability',
-    'Fees and Payment',
-    'Intellectual Property',
-    'Limitation of Liability',
-    'Indemnification',
-    'Changes to Terms',
-    'Governing Law',
-    'Contact Information',
-  ];
+  const [navSelected, setNavSelected] = useState(NAV_ITEMS[0]);
 
   const handleNavClick = (id: string) => {
     setNavSelected(id);
@@ -51,22 +52,20 @@ export default function TermsOfUse() {
           className="md:lg:w-64 p-4 rounded-3xl border border-[#DBE0E3]"
           sx={{
             position: { md: 'sticky', lg: 'sticky' },
-            top: { md: 32, lg: 32 }, // adjust as needed for your header height
+            top: { md: 32, lg: 32 },
             alignSelf: { md: 'flex-start', lg: 'flex-start' },
           }}
         >
           <Typography
             variant="h6"
             className="mb-4 !font-semibold"
-            sx={{
-              fontFamily: "'Inter', sans-serif",
-            }}
+            sx={{ fontFamily: "'Inter', sans-serif" }}
           >
             Content
           </Typography>
           <List dense>
-            {navItems.map((item, index) => (
-              <ListItem key={index} className="px-0 py-1 text-[#6D7579]">
+            {NAV_ITEMS.map((item) => (
+              <ListItem key={item} className="px-0 py-1 text-[#6D7579]">
                 <ListItemIcon className="!min-w-auto mr-2">
                   <Circle className="!text-[6px]" />
                 </ListItemIcon>
@@ -91,20 +90,13 @@ export default function TermsOfUse() {
           <Typography
             variant="h4"
             className="mb-2 !font-semibold"
-            sx={{
-              fontFamily: "'Inter', sans-serif",
-            }}
+            sx={{ fontFamily: "'Inter', sans-serif" }}
           >
             Terms Of Use
           </Typography>
-          <Typography
-            className="py-6"
-            sx={{
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
+          <Typography className="py-6" sx={{ fontFamily: "'Inter', sans-serif" }}>
             Thank you for visiting our Site! We look forward to doing business
-            with you. Here are some Do’s and Don’ts about our Site.
+            with you. Here are some Do&apos;s and Don&apos;ts about our Site.
           </Typography>
 
           <Divider />
@@ -112,21 +104,18 @@ export default function TermsOfUse() {
           <Typography
             variant="body2"
             className="py-6 mb-4 text-gray-600"
-            sx={{
-              fontFamily: "'Inter', sans-serif",
-            }}
+            sx={{ fontFamily: "'Inter', sans-serif" }}
           >
             Last Updated: <strong>16 January 2025</strong>
           </Typography>
 
-          {/* Sections */}
           <Section
             title="Acceptance of Terms"
-            content={`By accessing or using Connecta’s CPaaS platform (“Services”), you agree to comply with and be bound by these Terms of Use (“Terms”). If you do not agree to these Terms, you may not use the Services.`}
+            content={`By accessing or using Connecta's CPaaS platform ("Services"), you agree to comply with and be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, you may not use the Services.`}
           />
 
           <Section
-            title="Description Of Services"
+            title="Description of Services"
             content={`Connecta provides communication services such as single and bulk messaging, AI-powered chatbots, flow builders, campaign management, and contact center solutions across various channels, including WhatsApp, Line, Telegram, Email, SMS, Instagram Direct Message, and Facebook Messenger.`}
           />
 
@@ -139,16 +128,14 @@ export default function TermsOfUse() {
             <Typography
               variant="h6"
               className="!mb-4 !font-semibold !text-2xl"
-              sx={{
-                fontFamily: "'Inter', sans-serif",
-              }}
+              sx={{ fontFamily: "'Inter', sans-serif" }}
             >
               User Responsibility
             </Typography>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
               <li>
-                Ensure that your use of the Services complies with all
-                applicable laws and regulations.
+                Ensure that your use of the Services complies with all applicable
+                laws and regulations.
               </li>
               <li>
                 Do not use the Services for illegal, fraudulent, or harmful
@@ -161,20 +148,21 @@ export default function TermsOfUse() {
             </ul>
           </Box>
 
-          <Box className="mt-6" id="Prohibited Uses You agree not to:">
+          <Box className="mt-6" id="Prohibited Uses">
             <Typography
               variant="h6"
               className="!mb-4 !font-semibold !text-2xl"
-              sx={{
-                fontFamily: "'Inter', sans-serif",
-              }}
+              sx={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Prohibited Uses You agree not to:
+              Prohibited Uses
             </Typography>
+            <p className="text-base text-[#6D7579] inter mb-2">
+              You agree not to:
+            </p>
             <ul className="space-y-2 !text-base text-[#6D7579] list-disc list-inside inter">
               <li>
-                Violate the intellectual property rights of Connecta or any
-                third party.
+                Violate the intellectual property rights of Connecta or any third
+                party.
               </li>
               <li>
                 Interfere with or disrupt the integrity or performance of the
@@ -189,7 +177,7 @@ export default function TermsOfUse() {
 
           <Section
             title="Data Privacy"
-            content={`Connecta values your privacy and handles user data in accordance with our Privacy Policy. By using our Services, you consent to the collection and use of your data as outlined in the Privacy Policy.​`}
+            content={`Connecta values your privacy and handles user data in accordance with our Privacy Policy. By using our Services, you consent to the collection and use of your data as outlined in the Privacy Policy.`}
           />
 
           <Section
@@ -224,27 +212,15 @@ export default function TermsOfUse() {
 
           <Section
             title="Governing Law"
-            content={`These Terms shall be governed by and construed in accordance with the laws of Indonesia. Any disputes arising from these Terms shall be resolved in the courts of [Your Jurisdiction].`}
+            content={`These Terms shall be governed by and construed in accordance with the laws of Indonesia. Any disputes arising from these Terms shall be resolved in the courts of Indonesia.`}
           />
 
           <Section
             title="Contact Information"
-            content={`If you have any questions about these Terms, please contact us at support@connecta.id.`}
+            content={`If you have any questions about these Terms, please contact us at support@connecta.id.`}
           />
         </Box>
       </Box>
     </>
-  );
-}
-
-// Section component
-function Section({ title, content }: { title: string; content: string }) {
-  return (
-    <Box className="mt-6">
-      <Typography variant="h6" className="mb-2 font-semibold">
-        {title}
-      </Typography>
-      <Typography className="text-sm text-gray-700">{content}</Typography>
-    </Box>
   );
 }
